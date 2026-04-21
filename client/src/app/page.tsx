@@ -146,10 +146,6 @@ export default function Home() {
 
   return (
     <main className='yc-page'>
-      <div className='yc-glow right-[-4rem] top-[-3rem] h-[17rem] w-[17rem] bg-[#7b5e43]' aria-hidden='true' />
-      <div className='yc-glow left-[-3.5rem] top-[29rem] h-[14rem] w-[14rem] bg-[#946f49]' aria-hidden='true' />
-      <div className='yc-glow bottom-[-6rem] right-[24%] h-[16rem] w-[16rem] bg-[#5a5140]' aria-hidden='true' />
-
       <div className='relative z-[1] mx-auto grid max-w-[76rem] gap-[1.1rem]'>
         <TopBar style={reveal(0)} />
         <HeroSection style={reveal(0)} />

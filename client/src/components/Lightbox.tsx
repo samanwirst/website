@@ -13,14 +13,14 @@ type LightboxProps = {
 export function Lightbox({ activeShot, activeShotIndex, galleryCount, onClose, onPrevious, onNext }: LightboxProps) {
   return (
     <div
-      className='fixed inset-0 z-[120] grid place-items-center bg-[rgba(15,10,7,0.82)] p-[clamp(0.75rem,1.8vw,1.35rem)] backdrop-blur-[14px] animate-[lightbox-fade_190ms_ease]'
+      className='fixed inset-0 z-[120] grid place-items-center bg-[rgba(12,8,7,0.9)] p-[clamp(0.75rem,1.8vw,1.35rem)] animate-[lightbox-fade_120ms_linear]'
       role='dialog'
       aria-modal='true'
       aria-labelledby='lightbox-title'
       onClick={onClose}
     >
       <div
-        className='grid max-h-full w-[min(72rem,100%)] gap-[0.8rem] overflow-hidden rounded-[var(--radius-lg)] border border-[color:var(--line-strong)] bg-[linear-gradient(180deg,rgba(31,23,17,0.97),rgba(24,18,13,0.98)),radial-gradient(circle_at_88%_-10%,rgba(148,126,82,0.2),transparent_60%)] p-[0.9rem] shadow-[0_18px_48px_rgba(6,10,8,0.62)] max-[700px]:rounded-[var(--radius-md)] max-[700px]:p-[0.75rem]'
+        className='grid max-h-full w-[min(72rem,100%)] gap-[0.8rem] overflow-hidden rounded-[var(--radius-lg)] border-2 border-[color:var(--line-strong)] bg-[rgba(24,17,13,0.98)] p-[0.9rem] max-[700px]:rounded-[var(--radius-md)] max-[700px]:p-[0.75rem]'
         onClick={(event) => event.stopPropagation()}
       >
         <div className='flex items-start justify-between gap-[0.8rem] max-[700px]:flex-col'>
@@ -35,17 +35,17 @@ export function Lightbox({ activeShot, activeShotIndex, galleryCount, onClose, o
           </div>
           <button
             type='button'
-            className='min-h-[2.5rem] rounded-[var(--radius-md)] border border-[color:var(--line)] bg-[rgba(34,26,20,0.9)] px-[0.8rem] py-[0.45rem] text-[0.84rem] font-semibold text-[#e8dcc1] transition-[border-color,transform,background-color] duration-200 ease-out hover:-translate-y-[1px] hover:border-[color:var(--line-strong)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--focus)] max-[700px]:w-full'
+            className='min-h-[2.5rem] rounded-[var(--radius-md)] border-2 border-[color:var(--line)] bg-[rgba(34,26,20,0.9)] px-[0.8rem] py-[0.45rem] text-[0.84rem] font-semibold text-[#e8dcc1] transition-[border-color,background-color] duration-[120ms] linear hover:border-[color:var(--line-strong)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--focus)] max-[700px]:w-full'
             onClick={onClose}
             aria-label='Close image preview'
           >
             Close
           </button>
         </div>
-        <div className='grid min-h-[min(68vh,39rem)] grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-[0.65rem] rounded-[var(--radius-md)] border border-[color:var(--line)] bg-[radial-gradient(circle_at_50%_50%,rgba(112,86,60,0.35),transparent_68%),rgba(20,14,10,0.96)] p-[0.72rem] max-[700px]:min-h-[58vh] max-[700px]:grid-cols-1 max-[700px]:gap-[0.55rem] max-[700px]:p-[0.58rem]'>
+        <div className='grid min-h-[min(68vh,39rem)] grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-[0.65rem] rounded-[var(--radius-md)] border-2 border-[color:var(--line)] bg-[rgba(20,14,10,0.96)] p-[0.72rem] max-[700px]:min-h-[58vh] max-[700px]:grid-cols-1 max-[700px]:gap-[0.55rem] max-[700px]:p-[0.58rem]'>
           <button
             type='button'
-            className='inline-flex h-[2.7rem] w-[2.7rem] items-center justify-center rounded-[var(--radius-md)] border border-[color:var(--line)] bg-[rgba(34,26,20,0.9)] text-[1.18rem] text-[#e8dcc1] transition-[border-color,transform,background-color] duration-200 ease-out hover:-translate-y-[1px] hover:border-[color:var(--line-strong)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--focus)] max-[700px]:h-[2.35rem] max-[700px]:w-full'
+            className='inline-flex h-[2.7rem] w-[2.7rem] items-center justify-center rounded-[var(--radius-md)] border-2 border-[color:var(--line)] bg-[rgba(34,26,20,0.9)] text-[1.18rem] text-[#e8dcc1] transition-[border-color,background-color] duration-[120ms] linear hover:border-[color:var(--line-strong)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--focus)] max-[700px]:h-[2.35rem] max-[700px]:w-full'
             onClick={onPrevious}
             aria-label='Show previous image'
           >
@@ -64,7 +64,7 @@ export function Lightbox({ activeShot, activeShotIndex, galleryCount, onClose, o
           </div>
           <button
             type='button'
-            className='inline-flex h-[2.7rem] w-[2.7rem] items-center justify-center rounded-[var(--radius-md)] border border-[color:var(--line)] bg-[rgba(34,26,20,0.9)] text-[1.18rem] text-[#e8dcc1] transition-[border-color,transform,background-color] duration-200 ease-out hover:-translate-y-[1px] hover:border-[color:var(--line-strong)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--focus)] max-[700px]:h-[2.35rem] max-[700px]:w-full'
+            className='inline-flex h-[2.7rem] w-[2.7rem] items-center justify-center rounded-[var(--radius-md)] border-2 border-[color:var(--line)] bg-[rgba(34,26,20,0.9)] text-[1.18rem] text-[#e8dcc1] transition-[border-color,background-color] duration-[120ms] linear hover:border-[color:var(--line-strong)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--focus)] max-[700px]:h-[2.35rem] max-[700px]:w-full'
             onClick={onNext}
             aria-label='Show next image'
           >

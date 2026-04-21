@@ -19,27 +19,24 @@ export function NavigatorSection({ style, tracks }: NavigatorSectionProps) {
           <a
             key={track.title}
             href={track.href}
-            className='group grid gap-[0.55rem] rounded-[var(--radius-md)] border border-[color:var(--line)] bg-[radial-gradient(circle_at_85%_-10%,rgba(147,126,86,0.24),transparent_55%),linear-gradient(180deg,#3a2d22,#2b2119)] p-[0.95rem] transition-[transform,border-color,box-shadow] duration-[220ms] ease-out hover:-translate-y-[3px] hover:border-[color:var(--line-strong)] hover:shadow-[0_14px_32px_rgba(7,11,8,0.52)]'
+            className='group grid gap-[0.55rem] rounded-[var(--radius-md)] border-2 border-[color:var(--line)] bg-[var(--surface-strong)] p-[0.95rem] transition-[border-color,background-color] duration-[120ms] linear hover:border-[color:var(--line-strong)] hover:bg-[var(--surface)]'
           >
             <div className='flex items-center justify-between gap-[0.65rem]'>
-              <span className='font-mono text-[0.76rem] text-[#cab98f]'>Section {track.index}</span>
+              <span className='font-mono text-[0.76rem] text-[#775c3f]'>Section {track.index}</span>
               <span className='text-[0.72rem] uppercase tracking-[0.05em] text-[var(--accent)]'>{track.tag}</span>
             </div>
-            <h3 className='m-0 text-[1rem] leading-[1.28] transition-[transform,color] duration-[220ms] ease-out group-hover:translate-x-[2px] group-hover:text-[#f2e7cf]'>
+            <h3 className='m-0 text-[1rem] leading-[1.28] transition-colors duration-[120ms] linear group-hover:text-[#392919]'>
               {track.title}
             </h3>
-            <p className='m-0 text-[0.9rem] leading-[1.45] text-[var(--muted)] transition-[transform,color] duration-[220ms] ease-out group-hover:translate-x-[2px] group-hover:text-[#c7bda7]'>
+            <p className='m-0 text-[0.9rem] leading-[1.45] text-[var(--section-muted,var(--muted))] transition-colors duration-[120ms] linear group-hover:text-[#765c43]'>
               {track.summary}
             </p>
             <div className='flex items-center justify-between gap-[0.65rem]'>
-              <span className='text-[0.85rem] font-semibold text-[#ddcfb3]'>{track.meta}</span>
-              <span className='font-mono text-[0.78rem] text-[var(--muted)]'>{track.completion}%</span>
+              <span className='text-[0.85rem] font-semibold text-[#684f38]'>{track.meta}</span>
+              <span className='font-mono text-[0.78rem] text-[var(--section-muted,var(--muted))]'>{track.completion}%</span>
             </div>
-            <div className='h-[0.34rem] overflow-hidden rounded-full bg-[rgba(164,136,98,0.28)]' aria-hidden='true'>
-              <span
-                className='block h-full rounded-[inherit] bg-[linear-gradient(90deg,#a4794f_0%,#b8ad8a_100%)]'
-                style={{ width: `${track.completion}%` }}
-              />
+            <div className='h-[0.34rem] overflow-hidden rounded-none bg-[rgba(147,120,83,0.24)]' aria-hidden='true'>
+              <span className='block h-full rounded-none bg-[var(--brand)]' style={{ width: `${track.completion}%` }} />
             </div>
           </a>
         ))}

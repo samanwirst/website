@@ -20,9 +20,7 @@ export function ShoksSection({ style, facts, metrics, shots, onOpen }: ShoksSect
         <h2 className={sectionTitle}>ShoksSAT — Primary Product Case (CTO)</h2>
       </div>
       <div className='mt-[1.15rem] grid grid-cols-[1.1fr_0.9fr] gap-[0.85rem] max-[1000px]:grid-cols-2 max-[700px]:grid-cols-1'>
-        <article
-          className={`group ${panelCard} bg-[radial-gradient(circle_at_18%_18%,rgba(132,112,75,0.18),transparent_64%),linear-gradient(180deg,#392c21,#2b2118)]`}
-        >
+        <article className={`group ${panelCard} bg-[var(--surface-strong)]`}>
           <p className={miniTop}>Role + Scope</p>
           <p className={sectionSummary}>
             Production-first focus: SAT prep platform architecture, fast feature delivery, and growth-loop support.
@@ -31,7 +29,7 @@ export function ShoksSection({ style, facts, metrics, shots, onOpen }: ShoksSect
             {facts.map((fact) => (
               <li
                 key={fact}
-                className='relative pl-4 text-[0.92rem] leading-[1.5] text-[var(--muted)] transition-[transform,color] duration-[220ms] ease-out group-hover:translate-x-[2px] group-hover:text-[#cbbfa7] before:absolute before:left-0 before:top-[0.48rem] before:h-[0.42rem] before:w-[0.42rem] before:rounded-full before:bg-[var(--brand)] before:shadow-[0_0_0_3px_rgba(195,162,100,0.24)]'
+                className='relative pl-4 text-[0.92rem] leading-[1.5] text-[var(--section-muted,var(--muted))] transition-colors duration-[120ms] linear group-hover:text-[#6f563c] before:absolute before:left-0 before:top-[0.48rem] before:h-[0.42rem] before:w-[0.42rem] before:rounded-none before:bg-[var(--brand)]'
               >
                 {fact}
               </li>

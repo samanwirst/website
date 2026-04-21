@@ -7,14 +7,14 @@ type TopBarProps = {
 export function TopBar({ style }: TopBarProps) {
   return (
     <header
-      className='reveal sticky top-3 z-[18] flex items-center justify-between gap-4 rounded-[var(--radius-lg)] border border-[color:var(--line)] bg-[#1a140f] px-4 py-[0.9rem] max-[700px]:flex-col max-[700px]:items-start'
+      className='reveal sticky top-3 z-[18] flex items-center justify-between gap-4 rounded-[var(--radius-lg)] border-2 border-[color:var(--line)] bg-[#1a140f] px-4 py-[0.9rem] max-[700px]:flex-col max-[700px]:items-start'
       style={style}
     >
       <a
         className='inline-flex items-center gap-[0.42rem] text-[0.78rem] tracking-[0.14em] [font-family:var(--font-display),Trebuchet_MS,sans-serif]'
         href='#'
       >
-        <span className='h-[0.58rem] w-[0.58rem] rounded-full bg-[var(--brand)]' />
+        <span className='h-[0.58rem] w-[0.58rem] rounded-none bg-[var(--brand)]' />
         samanwirst
       </a>
       <nav

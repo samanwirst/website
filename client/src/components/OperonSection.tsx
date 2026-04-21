@@ -21,21 +21,19 @@ export function OperonSection({ style, architecture, runtimeChecks, metrics, sho
         <h2 className={sectionTitle}>OperonCRM — Architecture and API Contract Discipline</h2>
       </div>
       <div className='mt-[1.15rem] grid grid-cols-[1.1fr_0.9fr] gap-[0.85rem] max-[1000px]:grid-cols-2 max-[700px]:grid-cols-1'>
-        <article
-          className={`${panelCard} bg-[radial-gradient(circle_at_18%_18%,rgba(132,112,75,0.18),transparent_64%),linear-gradient(180deg,#392c21,#2b2118)]`}
-        >
+        <article className={`${panelCard} bg-[var(--surface-strong)]`}>
           <p className={miniTop}>Architecture (interactive)</p>
           <div className='mt-[0.7rem] grid grid-cols-1 gap-[0.55rem]'>
             {architecture.map((node, index) => (
               <details
                 key={node.layer}
-                className='group overflow-hidden rounded-[var(--radius-md)] border border-[color:var(--line)] bg-[#32261c] transition-[transform,border-color,box-shadow] duration-[220ms] ease-out hover:-translate-y-[1px] hover:border-[color:var(--line-strong)] hover:shadow-[0_10px_18px_rgba(6,10,8,0.32)]'
+                className='group overflow-hidden rounded-[var(--radius-md)] border-2 border-[color:var(--line)] bg-[var(--surface-soft)] transition-[border-color,background-color] duration-[120ms] linear hover:border-[color:var(--line-strong)]'
                 open={index === 0}
               >
-                <summary className='flex list-none cursor-pointer items-center justify-between gap-[0.7rem] px-[0.86rem] py-[0.72rem] text-[0.9rem] font-semibold text-[#e7dbc3] transition-[background-color,padding-left] duration-[180ms] ease-out group-hover:bg-[#4a392b] group-hover:pl-[0.96rem] after:font-bold after:text-[var(--muted)] after:content-["+"] group-open:after:content-["-"] [&::-webkit-details-marker]:hidden'>
+                <summary className='flex list-none cursor-pointer items-center justify-between gap-[0.7rem] px-[0.86rem] py-[0.72rem] text-[0.9rem] font-semibold text-[var(--section-text,var(--text))] transition-[background-color] duration-[120ms] linear group-hover:bg-[var(--surface)] after:font-bold after:text-[var(--section-muted,var(--muted))] after:content-["+"] group-open:after:content-["-"] [&::-webkit-details-marker]:hidden'>
                   {node.layer}
                 </summary>
-                <p className='m-0 px-[0.86rem] pb-[0.86rem] text-[0.82rem] leading-[1.42] text-[var(--muted)]'>
+                <p className='m-0 px-[0.86rem] pb-[0.86rem] text-[0.82rem] leading-[1.42] text-[var(--section-muted,var(--muted))]'>
                   {node.details}
                 </p>
               </details>
@@ -46,13 +44,15 @@ export function OperonSection({ style, architecture, runtimeChecks, metrics, sho
             {runtimeChecks.map((fact, index) => (
               <details
                 key={fact}
-                className='group overflow-hidden rounded-[var(--radius-md)] border border-[color:var(--line)] bg-[#32261c] transition-[transform,border-color,box-shadow] duration-[220ms] ease-out hover:-translate-y-[1px] hover:border-[color:var(--line-strong)] hover:shadow-[0_10px_18px_rgba(6,10,8,0.32)]'
+                className='group overflow-hidden rounded-[var(--radius-md)] border-2 border-[color:var(--line)] bg-[var(--surface-soft)] transition-[border-color,background-color] duration-[120ms] linear hover:border-[color:var(--line-strong)]'
                 open={index === 0}
               >
-                <summary className='flex list-none cursor-pointer items-center justify-between gap-[0.7rem] px-[0.86rem] py-[0.72rem] text-[0.9rem] font-semibold text-[#e7dbc3] transition-[background-color,padding-left] duration-[180ms] ease-out group-hover:bg-[#4a392b] group-hover:pl-[0.96rem] after:font-bold after:text-[var(--muted)] after:content-["+"] group-open:after:content-["-"] [&::-webkit-details-marker]:hidden'>
+                <summary className='flex list-none cursor-pointer items-center justify-between gap-[0.7rem] px-[0.86rem] py-[0.72rem] text-[0.9rem] font-semibold text-[var(--section-text,var(--text))] transition-[background-color] duration-[120ms] linear group-hover:bg-[var(--surface)] after:font-bold after:text-[var(--section-muted,var(--muted))] after:content-["+"] group-open:after:content-["-"] [&::-webkit-details-marker]:hidden'>
                   Check {String(index + 1).padStart(2, '0')}
                 </summary>
-                <p className='m-0 px-[0.86rem] pb-[0.86rem] text-[0.82rem] leading-[1.42] text-[var(--muted)]'>{fact}</p>
+                <p className='m-0 px-[0.86rem] pb-[0.86rem] text-[0.82rem] leading-[1.42] text-[var(--section-muted,var(--muted))]'>
+                  {fact}
+                </p>
               </details>
             ))}
           </div>

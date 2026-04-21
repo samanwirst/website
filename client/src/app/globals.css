@@ -3,19 +3,22 @@
 :root {
   --bg: #17120d;
   --bg-soft: #221a13;
-  --surface: #2d2218;
-  --surface-strong: #36291e;
-  --line: rgba(173, 146, 113, 0.28);
-  --line-strong: rgba(207, 178, 142, 0.5);
+  --surface: #efd8b8;
+  --surface-strong: #e3c59d;
+  --surface-soft: #f5e6cf;
+  --line: rgba(180, 40, 40, 0.62);
+  --line-strong: rgba(242, 76, 76, 0.98);
   --text: #efe2cf;
   --muted: #c3ad90;
-  --brand: #b88a5a;
-  --brand-soft: rgba(184, 138, 90, 0.22);
-  --accent: #b7ab88;
-  --focus: #ddb88d;
-  --radius-xl: 16px;
-  --radius-lg: 12px;
-  --radius-md: 8px;
+  --ink: #2f2216;
+  --ink-muted: #6e563d;
+  --brand: #be3a3a;
+  --brand-soft: rgba(190, 58, 58, 0.24);
+  --accent: #9e5a5a;
+  --focus: #ff6b6b;
+  --radius-xl: 0px;
+  --radius-lg: 0px;
+  --radius-md: 0px;
 }
 
 @theme inline {
@@ -52,10 +55,20 @@
     overflow: hidden;
     isolation: isolate;
     padding: 1.25rem clamp(1rem, 2.4vw, 2.5rem) 3.75rem;
-    background:
-      radial-gradient(70% 56% at 16% -4%, rgba(112, 103, 76, 0.24) 0%, transparent 66%),
-      radial-gradient(52% 45% at 88% 4%, rgba(152, 113, 73, 0.24) 0%, transparent 62%),
-      linear-gradient(180deg, #1c1510 0%, #17120d 46%, #120d09 100%);
+    background: linear-gradient(180deg, #18110f 0%, #120d0b 100%);
+  }
+
+  .yc-page::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background-image:
+      repeating-linear-gradient(0deg, rgba(210, 72, 72, 0.18) 0 1px, transparent 1px 44px),
+      repeating-linear-gradient(90deg, rgba(210, 72, 72, 0.14) 0 1px, transparent 1px 44px),
+      linear-gradient(90deg, transparent 0%, rgba(222, 77, 77, 0.22) 49.6%, rgba(222, 77, 77, 0.22) 50.4%, transparent 100%);
+    opacity: 0.74;
   }
 
   .yc-page::after {
@@ -65,10 +78,10 @@
     z-index: 0;
     pointer-events: none;
     background-image:
-      repeating-linear-gradient(18deg, rgba(233, 224, 201, 0.1) 0 1px, rgba(233, 224, 201, 0) 1px 7px),
-      repeating-linear-gradient(102deg, rgba(177, 160, 126, 0.085) 0 1px, rgba(177, 160, 126, 0) 1px 8px),
-      repeating-linear-gradient(64deg, rgba(150, 137, 108, 0.055) 0 1px, rgba(150, 137, 108, 0) 1px 11px),
-      radial-gradient(circle at 1px 1px, rgba(239, 226, 198, 0.095) 0.8px, transparent 1px);
+      repeating-linear-gradient(18deg, rgba(233, 224, 201, 0.08) 0 1px, rgba(233, 224, 201, 0) 1px 8px),
+      repeating-linear-gradient(102deg, rgba(177, 160, 126, 0.07) 0 1px, rgba(177, 160, 126, 0) 1px 9px),
+      repeating-linear-gradient(64deg, rgba(150, 137, 108, 0.05) 0 1px, rgba(150, 137, 108, 0) 1px 12px),
+      radial-gradient(circle at 1px 1px, rgba(239, 226, 198, 0.075) 0.8px, transparent 1px);
     background-size:
       240px 200px,
       220px 260px,
@@ -79,15 +92,8 @@
       24px -20px,
       -18px 10px,
       0 0;
-    opacity: 0.5;
+    opacity: 0.46;
     mix-blend-mode: normal;
-  }
-
-  .yc-glow {
-    @apply absolute rounded-full;
-    filter: blur(68px);
-    z-index: 0;
-    opacity: 0.48;
   }
 
   .reveal {

@@ -18,7 +18,7 @@ export function ContactSection({ style }: ContactSectionProps) {
           Professional profile:{' '}
           <span className='text-[var(--brand)]'>ownership, delivery speed, and architectural precision.</span>
         </h2>
-        <p className='m-[0.8rem_0_0] max-w-[55ch] leading-[1.52] text-[var(--muted)]'>
+        <p className='m-[0.8rem_0_0] max-w-[55ch] leading-[1.52] text-[var(--section-muted,var(--muted))]'>
           Page structure follows execution priority: ShoksSAT {'->'} OperonCRM {'->'} additional cases {'->'} academic
           achievements.
         </p>
