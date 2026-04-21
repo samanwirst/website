@@ -105,6 +105,45 @@ export default function Home() {
     };
   }, [activeShotIndex, closeLightbox, showNextShot, showPreviousShot]);
 
+  useEffect(() => {
+    const revealBlocks = Array.from(document.querySelectorAll<HTMLElement>('.reveal'));
+    if (revealBlocks.length === 0) {
+      return;
+    }
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      revealBlocks.forEach((block) => {
+        block.classList.add('is-visible');
+      });
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries, currentObserver) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) {
+            return;
+          }
+          const target = entry.target as HTMLElement;
+          target.classList.add('is-visible');
+          currentObserver.unobserve(target);
+        });
+      },
+      {
+        threshold: 0.12,
+        rootMargin: '0px 0px -8% 0px',
+      }
+    );
+
+    revealBlocks.forEach((block) => {
+      observer.observe(block);
+    });
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
   return (
     <main className='yc-page'>
       <div className='yc-glow yc-glow-one' aria-hidden='true' />
@@ -112,13 +151,13 @@ export default function Home() {
       <div className='yc-glow yc-glow-three' aria-hidden='true' />
 
       <div className='yc-shell'>
-        <TopBar style={reveal(20)} />
-        <HeroSection style={reveal(90)} />
-        <StatsSection style={reveal(140)} metrics={coreMetrics} />
-        <NavigatorSection style={reveal(170)} tracks={focusTracks} />
-        <ShoksSection style={reveal(205)} facts={shoksFacts} metrics={shoksMetrics} shots={shoksShots} onOpen={openLightbox} />
+        <TopBar style={reveal(0)} />
+        <HeroSection style={reveal(0)} />
+        <StatsSection style={reveal(0)} metrics={coreMetrics} />
+        <NavigatorSection style={reveal(0)} tracks={focusTracks} />
+        <ShoksSection style={reveal(0)} facts={shoksFacts} metrics={shoksMetrics} shots={shoksShots} onOpen={openLightbox} />
         <OperonSection
-          style={reveal(245)}
+          style={reveal(0)}
           architecture={operonArchitecture}
           runtimeChecks={runtimeChecks}
           metrics={operonMetrics}
@@ -126,14 +165,14 @@ export default function Home() {
           onOpen={openLightbox}
         />
         <OthersSection
-          style={reveal(290)}
+          style={reveal(0)}
           workExperience={workExperience}
           projectHighlights={projectHighlights}
           journalShots={journalShots}
           onOpen={openLightbox}
         />
-        <AcademicSection style={reveal(340)} achievements={academicAchievements} onOpen={openLightbox} />
-        <ContactSection style={reveal(410)} />
+        <AcademicSection style={reveal(0)} achievements={academicAchievements} onOpen={openLightbox} />
+        <ContactSection style={reveal(0)} />
       </div>
 
       {activeShot && activeShotIndex !== null ? (
