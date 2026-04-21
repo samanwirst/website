@@ -6,7 +6,7 @@ type CompactMetricGridProps = {
 
 export function CompactMetricGrid({ metrics }: CompactMetricGridProps) {
   return (
-    <div className='mt-[0.7rem] grid grid-cols-2 gap-[0.55rem]'>
+    <div className='mt-[0.7rem] grid grid-cols-2 gap-[0.55rem] max-[460px]:grid-cols-1'>
       {metrics.map((item) => (
         <div
           key={item.label}

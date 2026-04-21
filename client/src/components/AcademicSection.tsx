@@ -19,7 +19,7 @@ export function AcademicSection({ style, achievements, onOpen }: AcademicSection
       <p className={sectionSummary}>
         Scientific track (AlphaMorphism + Theory of Digital Cemetery) and verified academic certificates.
       </p>
-      <div className='mt-4 grid grid-cols-2 items-start gap-[0.75rem] max-[1000px]:grid-cols-2 max-[700px]:grid-cols-1'>
+      <div className='mt-4 grid grid-cols-2 items-start gap-[0.75rem] max-[860px]:grid-cols-1'>
         {achievements.map((achievement) => {
           const certificateAchievement = isAcademicCertificate(achievement);
 
@@ -48,7 +48,7 @@ export function AcademicSection({ style, achievements, onOpen }: AcademicSection
                       alt={achievement.title}
                       fill
                       unoptimized
-                      sizes='(max-width: 1000px) 100vw, 48vw'
+                      sizes='(max-width: 860px) 100vw, 48vw'
                     />
                     <span className='pointer-events-none absolute right-[0.62rem] top-[0.62rem] translate-y-[-2px] rounded-none border-2 border-[rgba(197,178,138,0.45)] bg-[rgba(12,17,13,0.78)] px-[0.55rem] py-[0.22rem] font-mono text-[0.72rem] tracking-[0.04em] text-[#e8dcc1] opacity-0 transition-[opacity,transform] duration-[120ms] linear group-hover:translate-y-0 group-hover:opacity-100'>
                       View
@@ -60,7 +60,7 @@ export function AcademicSection({ style, achievements, onOpen }: AcademicSection
                   </div>
                 )}
               </div>
-              <div className='grid gap-[0.52rem] p-[0.9rem]'>
+              <div className='grid gap-[0.52rem] p-[0.9rem] max-[480px]:p-[0.78rem]'>
                 <p className={miniTop}>{achievement.date}</p>
                 <h3 className='m-0 text-[1rem] leading-[1.3]'>{achievement.title}</h3>
                 <p className='m-0 text-[0.9rem] leading-[1.46] text-[var(--section-muted,var(--muted))]'>
@@ -83,7 +83,7 @@ export function AcademicSection({ style, achievements, onOpen }: AcademicSection
                 ) : null}
                 {achievement.link && achievement.linkLabel ? (
                   <a
-                    className='text-[0.84rem] text-[var(--brand)] hover:underline'
+                    className='text-[0.84rem] text-[var(--brand)] hover:cursor-pointer hover:underline'
                     href={achievement.link}
                     target='_blank'
                     rel='noreferrer'

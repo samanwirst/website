@@ -9,7 +9,7 @@ export function ContactSection({ style }: ContactSectionProps) {
   return (
     <section
       id='contact'
-      className={`${sectionShell} flex items-end justify-between gap-4 max-[1000px]:flex-col max-[1000px]:items-stretch`}
+      className={`${sectionShell} flex items-end justify-between gap-4 max-[1000px]:flex-col max-[1000px]:items-stretch max-[700px]:gap-3`}
       style={style}
     >
       <div>

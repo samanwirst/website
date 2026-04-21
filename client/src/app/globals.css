@@ -132,6 +132,13 @@
   }
 }
 
+@media (max-width: 480px) {
+  .yc-page {
+    padding-inline: 0.58rem;
+    padding-bottom: 2.2rem;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

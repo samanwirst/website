@@ -9,13 +9,13 @@ type StatsSectionProps = {
 export function StatsSection({ style, metrics }: StatsSectionProps) {
   return (
     <section
-      className='reveal grid grid-cols-4 gap-[0.8rem] text-[var(--section-text,var(--text))] [--section-text:var(--ink)] [--section-muted:var(--ink-muted)] max-[1000px]:grid-cols-2 max-[700px]:grid-cols-1'
+      className='reveal grid grid-cols-4 gap-[0.8rem] text-[var(--section-text,var(--text))] [--section-text:var(--ink)] [--section-muted:var(--ink-muted)] max-[1000px]:grid-cols-2 max-[700px]:grid-cols-2 max-[430px]:grid-cols-1'
       style={style}
     >
       {metrics.map((item) => (
         <article
           key={item.label}
-          className='rounded-[var(--radius-lg)] border-2 border-[color:var(--line)] bg-[var(--surface)] px-[1.1rem] py-4'
+          className='rounded-[var(--radius-lg)] border-2 border-[color:var(--line)] bg-[var(--surface)] px-[1.1rem] py-4 max-[480px]:px-[0.85rem] max-[480px]:py-[0.75rem]'
         >
           <p className='m-0 text-[clamp(1.65rem,3vw,2.4rem)] leading-[1.05] text-[var(--section-text,var(--text))] [font-family:var(--font-display),Trebuchet_MS,sans-serif]'>
             {item.value}

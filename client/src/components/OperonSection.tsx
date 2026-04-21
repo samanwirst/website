@@ -20,7 +20,7 @@ export function OperonSection({ style, architecture, runtimeChecks, metrics, sho
         <p className={eyebrow}>SECTION 02 · OPERONCRM</p>
         <h2 className={sectionTitle}>OperonCRM — Architecture and API Contract Discipline</h2>
       </div>
-      <div className='mt-[1.15rem] grid grid-cols-[1.1fr_0.9fr] gap-[0.85rem] max-[1000px]:grid-cols-2 max-[700px]:grid-cols-1'>
+      <div className='mt-[1.15rem] grid grid-cols-[1.1fr_0.9fr] gap-[0.85rem] max-[960px]:grid-cols-1 max-[700px]:gap-[0.7rem]'>
         <article className={`${panelCard} bg-[var(--surface-strong)]`}>
           <p className={miniTop}>Architecture (interactive)</p>
           <div className='mt-[0.7rem] grid grid-cols-1 gap-[0.55rem]'>
@@ -59,12 +59,12 @@ export function OperonSection({ style, architecture, runtimeChecks, metrics, sho
           <p className={miniTop}>OperonCRM Scoreboard</p>
           <CompactMetricGrid metrics={metrics} />
         </article>
-        <div className='mt-0 grid grid-cols-1 gap-[0.75rem] max-[1000px]:grid-cols-2 max-[700px]:grid-cols-1'>
+        <div className='mt-0 grid grid-cols-1 gap-[0.75rem] max-[960px]:grid-cols-2 max-[560px]:grid-cols-1'>
           {shots.map((shot) => (
             <ShotCard
               key={shot.title}
               shot={shot}
-              imageSizes='(max-width: 1000px) 100vw, 38vw'
+              imageSizes='(max-width: 560px) 100vw, (max-width: 960px) 50vw, 38vw'
               linkLabel='Open source endpoint'
               fallbackTag='local runtime capture'
               onOpen={onOpen}

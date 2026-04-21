@@ -23,7 +23,7 @@ export function OthersSection({ style, workExperience, projectHighlights, journa
       </p>
       <div className='mt-4 border-t-2 border-[color:var(--line)] pt-[0.9rem]'>
         <p className={miniTop}>Commercial Experience Timeline</p>
-        <div className='mt-4 grid grid-cols-2 gap-[0.75rem] max-[1000px]:grid-cols-2 max-[700px]:grid-cols-1'>
+        <div className='mt-4 grid grid-cols-2 gap-[0.75rem] max-[860px]:grid-cols-1'>
           {workExperience.map((item) => (
             <article
               key={`${item.company}-${item.period}`}
@@ -39,7 +39,7 @@ export function OthersSection({ style, workExperience, projectHighlights, journa
           ))}
         </div>
       </div>
-      <div className='mt-4 grid grid-cols-2 gap-[0.75rem] max-[1000px]:grid-cols-2 max-[700px]:grid-cols-1'>
+      <div className='mt-4 grid grid-cols-2 gap-[0.75rem] max-[860px]:grid-cols-1'>
         {projectHighlights.map((project) => (
           <article
             key={project.name}
@@ -51,7 +51,7 @@ export function OthersSection({ style, workExperience, projectHighlights, journa
             </h3>
             <p className='m-0 text-[0.9rem] leading-[1.45] text-[var(--section-muted,var(--muted))]'>{project.summary}</p>
             <a
-              className='break-words text-[0.84rem] text-[var(--brand)] hover:underline'
+              className='break-words text-[0.84rem] text-[var(--brand)] hover:cursor-pointer hover:underline'
               href={project.link}
               target='_blank'
               rel='noreferrer'
@@ -63,12 +63,12 @@ export function OthersSection({ style, workExperience, projectHighlights, journa
       </div>
       <div className='mt-4 border-t-2 border-[color:var(--line)] pt-[0.9rem]'>
         <p className={miniTop}>Engineering Journal (Telegram)</p>
-        <div className='mt-[0.75rem] grid grid-cols-2 gap-[0.75rem] max-[1000px]:grid-cols-2 max-[700px]:grid-cols-1'>
+        <div className='mt-[0.75rem] grid grid-cols-2 gap-[0.75rem] max-[860px]:grid-cols-1'>
           {journalShots.map((shot) => (
             <ShotCard
               key={shot.title}
               shot={shot}
-              imageSizes='(max-width: 700px) 100vw, (max-width: 1000px) 50vw, 33vw'
+              imageSizes='(max-width: 860px) 100vw, 50vw'
               linkLabel='Open Telegram post'
               onOpen={onOpen}
             />
