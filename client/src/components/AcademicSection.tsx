@@ -1,24 +1,24 @@
 import type { CSSProperties } from 'react';
 import Image from 'next/image';
+import type { AcademicTexts } from '@/i18n/siteI18n';
 import { isAcademicCertificate, type AcademicAchievement } from '@/types/portfolio';
 import { eyebrow, miniTop, sectionHead, sectionShell, sectionSummary, sectionTitle } from './uiClasses';
 
 type AcademicSectionProps = {
   style: CSSProperties;
   achievements: readonly AcademicAchievement[];
+  texts: AcademicTexts;
   onOpen: (image: string, title: string) => void;
 };
 
-export function AcademicSection({ style, achievements, onOpen }: AcademicSectionProps) {
+export function AcademicSection({ style, achievements, texts, onOpen }: AcademicSectionProps) {
   return (
     <section id='academic' className={sectionShell} style={style}>
       <div className={sectionHead}>
-        <p className={eyebrow}>SECTION 04 · ACADEMICS</p>
-        <h2 className={sectionTitle}>Academic Achievements</h2>
+        <p className={eyebrow}>{texts.eyebrow}</p>
+        <h2 className={sectionTitle}>{texts.title}</h2>
       </div>
-      <p className={sectionSummary}>
-        Scientific track (AlphaMorphism + Theory of Digital Cemetery) and verified academic certificates.
-      </p>
+      <p className={sectionSummary}>{texts.summary}</p>
       <div className='mt-4 grid grid-cols-2 items-start gap-[0.75rem] max-[860px]:grid-cols-1'>
         {achievements.map((achievement) => {
           const certificateAchievement = isAcademicCertificate(achievement);
@@ -40,7 +40,7 @@ export function AcademicSection({ style, achievements, onOpen }: AcademicSection
                     type='button'
                     className='relative h-full w-full cursor-zoom-in bg-transparent'
                     onClick={() => onOpen(achievement.image, achievement.title)}
-                    aria-label={`Open image: ${achievement.title}`}
+                    aria-label={`${texts.openImagePrefix}: ${achievement.title}`}
                   >
                     <Image
                       className='h-full w-full object-contain p-[0.5rem]'
@@ -51,7 +51,7 @@ export function AcademicSection({ style, achievements, onOpen }: AcademicSection
                       sizes='(max-width: 860px) 100vw, 48vw'
                     />
                     <span className='pointer-events-none absolute right-[0.62rem] top-[0.62rem] translate-y-[-2px] rounded-none border-2 border-[rgba(197,178,138,0.45)] bg-[rgba(12,17,13,0.78)] px-[0.55rem] py-[0.22rem] font-mono text-[0.72rem] tracking-[0.04em] text-[#e8dcc1] opacity-0 transition-[opacity,transform] duration-[120ms] linear group-hover:translate-y-0 group-hover:opacity-100'>
-                      View
+                      {texts.viewLabel}
                     </span>
                   </button>
                 ) : (

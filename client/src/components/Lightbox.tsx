@@ -1,17 +1,19 @@
 import Image from 'next/image';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import type { LightboxTexts } from '@/i18n/siteI18n';
 import type { GalleryShot } from '@/types/portfolio';
 
 type LightboxProps = {
   activeShot: GalleryShot;
   activeShotIndex: number;
   galleryCount: number;
+  texts: LightboxTexts;
   onClose: () => void;
   onPrevious: () => void;
   onNext: () => void;
 };
 
-export function Lightbox({ activeShot, activeShotIndex, galleryCount, onClose, onPrevious, onNext }: LightboxProps) {
+export function Lightbox({ activeShot, activeShotIndex, galleryCount, texts, onClose, onPrevious, onNext }: LightboxProps) {
   return (
     <div
       className='fixed inset-0 z-[120] grid place-items-center bg-[rgba(12,8,7,0.9)] p-[clamp(0.75rem,1.8vw,1.35rem)] animate-[lightbox-fade_120ms_linear]'
@@ -38,9 +40,9 @@ export function Lightbox({ activeShot, activeShotIndex, galleryCount, onClose, o
             type='button'
             className='min-h-[2.5rem] rounded-[var(--radius-md)] border-2 border-[color:var(--line)] bg-[rgba(34,26,20,0.9)] px-[0.8rem] py-[0.45rem] text-[0.84rem] font-semibold text-[#e8dcc1] transition-[border-color,background-color] duration-[120ms] linear hover:cursor-pointer hover:border-[color:var(--line-strong)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--focus)] max-[700px]:w-full'
             onClick={onClose}
-            aria-label='Close image preview'
+            aria-label={texts.closeAria}
           >
-            Close
+            {texts.close}
           </button>
         </div>
         <div className='grid min-h-[min(68vh,39rem)] grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-[0.65rem] rounded-[var(--radius-md)] border-2 border-[color:var(--line)] bg-[rgba(20,14,10,0.96)] p-[0.72rem] max-[700px]:min-h-0 max-[700px]:grid-cols-1 max-[700px]:gap-[0.55rem] max-[700px]:p-[0.58rem]'>
@@ -48,7 +50,7 @@ export function Lightbox({ activeShot, activeShotIndex, galleryCount, onClose, o
             type='button'
             className='inline-flex h-[2.7rem] w-[2.7rem] items-center justify-center rounded-[var(--radius-md)] border-2 border-[color:var(--line)] bg-[rgba(34,26,20,0.9)] text-[1.18rem] text-[#e8dcc1] transition-[border-color,background-color] duration-[120ms] linear hover:cursor-pointer hover:border-[color:var(--line-strong)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--focus)] max-[700px]:h-[2.35rem] max-[700px]:w-full'
             onClick={onPrevious}
-            aria-label='Show previous image'
+            aria-label={texts.previousAria}
           >
             <ChevronLeft className='h-[1.2rem] w-[1.2rem]' aria-hidden='true' />
           </button>
@@ -67,12 +69,12 @@ export function Lightbox({ activeShot, activeShotIndex, galleryCount, onClose, o
             type='button'
             className='inline-flex h-[2.7rem] w-[2.7rem] items-center justify-center rounded-[var(--radius-md)] border-2 border-[color:var(--line)] bg-[rgba(34,26,20,0.9)] text-[1.18rem] text-[#e8dcc1] transition-[border-color,background-color] duration-[120ms] linear hover:cursor-pointer hover:border-[color:var(--line-strong)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--focus)] max-[700px]:h-[2.35rem] max-[700px]:w-full'
             onClick={onNext}
-            aria-label='Show next image'
+            aria-label={texts.nextAria}
           >
             <ChevronRight className='h-[1.2rem] w-[1.2rem]' aria-hidden='true' />
           </button>
         </div>
-        <p className='m-0 font-mono text-[0.78rem] tracking-[0.03em] text-[#b5a88b]'>Esc to close · Use ←/→ to navigate</p>
+        <p className='m-0 font-mono text-[0.78rem] tracking-[0.03em] text-[#b5a88b]'>{texts.hint}</p>
       </div>
     </div>
   );

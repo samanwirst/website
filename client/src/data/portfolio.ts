@@ -270,3 +270,18 @@ export const academicAchievements = [
     image: '/media/academic/samarkand-hokim-lms-ar-ai.jpg',
   },
 ] satisfies readonly AcademicAchievement[];
+
+export const portfolioDataEn = {
+  focusTracks,
+  shoksMetrics,
+  shoksFacts,
+  shoksShots,
+  operonMetrics,
+  operonArchitecture,
+  runtimeChecks,
+  runtimeShots,
+  journalShots,
+  projectHighlights,
+  workExperience,
+  academicAchievements,
+} as const;

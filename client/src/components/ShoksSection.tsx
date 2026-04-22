@@ -1,4 +1,5 @@
 import type { CSSProperties } from 'react';
+import type { ShoksTexts, ShotCardTexts } from '@/i18n/siteI18n';
 import type { EvidenceShot, Metric } from '@/types/portfolio';
 import { CompactMetricGrid } from './CompactMetricGrid';
 import { ShotCard } from './ShotCard';
@@ -9,22 +10,22 @@ type ShoksSectionProps = {
   facts: readonly string[];
   metrics: readonly Metric[];
   shots: readonly EvidenceShot[];
+  texts: ShoksTexts;
+  shotCardTexts: ShotCardTexts;
   onOpen: (image: string, title: string) => void;
 };
 
-export function ShoksSection({ style, facts, metrics, shots, onOpen }: ShoksSectionProps) {
+export function ShoksSection({ style, facts, metrics, shots, texts, shotCardTexts, onOpen }: ShoksSectionProps) {
   return (
     <section id='shoks' className={sectionShell} style={style}>
       <div className={sectionHead}>
-        <p className={eyebrow}>SECTION 01 · SHOKSSAT</p>
-        <h2 className={sectionTitle}>ShoksSAT — Primary Product Case (CTO)</h2>
+        <p className={eyebrow}>{texts.eyebrow}</p>
+        <h2 className={sectionTitle}>{texts.title}</h2>
       </div>
       <div className='mt-[1.15rem] grid grid-cols-[1.1fr_0.9fr] gap-[0.85rem] max-[960px]:grid-cols-1 max-[700px]:gap-[0.7rem]'>
         <article className={`group ${panelCard} bg-[var(--surface-strong)]`}>
-          <p className={miniTop}>Role + Scope</p>
-          <p className={sectionSummary}>
-            Production-first focus: SAT prep platform architecture, fast feature delivery, and growth-loop support.
-          </p>
+          <p className={miniTop}>{texts.roleScopeTitle}</p>
+          <p className={sectionSummary}>{texts.roleScopeSummary}</p>
           <ul className='mt-[0.65rem] grid list-none gap-[0.45rem] p-0'>
             {facts.map((fact) => (
               <li
@@ -35,7 +36,7 @@ export function ShoksSection({ style, facts, metrics, shots, onOpen }: ShoksSect
               </li>
             ))}
           </ul>
-          <p className={miniTop}>ShoksSAT Scoreboard</p>
+          <p className={miniTop}>{texts.scoreboardTitle}</p>
           <CompactMetricGrid metrics={metrics} />
         </article>
         <div className='mt-0 grid grid-cols-1 gap-[0.75rem] max-[960px]:grid-cols-2 max-[560px]:grid-cols-1'>
@@ -44,7 +45,10 @@ export function ShoksSection({ style, facts, metrics, shots, onOpen }: ShoksSect
               key={shot.title}
               shot={shot}
               imageSizes='(max-width: 560px) 100vw, (max-width: 960px) 50vw, 42vw'
-              linkLabel='Open Telegram'
+              linkLabel={texts.shotLinkLabel}
+              viewLabel={shotCardTexts.viewLabel}
+              openImagePrefix={shotCardTexts.openImagePrefix}
+              defaultSourceLabel={shotCardTexts.openSourceLabel}
               onOpen={onOpen}
             />
           ))}

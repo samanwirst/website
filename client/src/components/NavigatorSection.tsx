@@ -1,18 +1,20 @@
 import type { CSSProperties } from 'react';
+import type { NavigatorTexts } from '@/i18n/siteI18n';
 import type { FocusTrack } from '@/types/portfolio';
 import { eyebrow, sectionHead, sectionShell, sectionTitle } from './uiClasses';
 
 type NavigatorSectionProps = {
   style: CSSProperties;
   tracks: readonly FocusTrack[];
+  texts: NavigatorTexts;
 };
 
-export function NavigatorSection({ style, tracks }: NavigatorSectionProps) {
+export function NavigatorSection({ style, tracks, texts }: NavigatorSectionProps) {
   return (
     <section className={sectionShell} style={style}>
       <div className={sectionHead}>
-        <p className={eyebrow}>INTERACTIVE NAVIGATOR</p>
-        <h2 className={sectionTitle}>Key Portfolio Sections</h2>
+        <p className={eyebrow}>{texts.eyebrow}</p>
+        <h2 className={sectionTitle}>{texts.title}</h2>
       </div>
       <div className='mt-4 grid grid-cols-3 gap-[0.75rem] max-[1000px]:grid-cols-2 max-[860px]:grid-cols-1 max-[700px]:gap-[0.6rem]'>
         {tracks.map((track) => (
@@ -22,7 +24,9 @@ export function NavigatorSection({ style, tracks }: NavigatorSectionProps) {
             className='group grid gap-[0.55rem] rounded-[var(--radius-md)] border-2 border-[color:var(--line)] bg-[var(--surface-strong)] p-[0.95rem] transition-[border-color,background-color] duration-[120ms] linear hover:cursor-pointer hover:border-[color:var(--line-strong)] hover:bg-[var(--surface)] max-[480px]:p-[0.8rem]'
           >
             <div className='flex min-w-0 items-center justify-between gap-[0.65rem]'>
-              <span className='font-mono text-[0.76rem] text-[#775c3f]'>Section {track.index}</span>
+              <span className='font-mono text-[0.76rem] text-[#775c3f]'>
+                {texts.sectionLabel} {track.index}
+              </span>
               <span className='text-[0.72rem] uppercase tracking-[0.05em] text-[var(--accent)] max-[480px]:text-[0.66rem]'>
                 {track.tag}
               </span>

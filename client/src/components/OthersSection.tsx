@@ -1,4 +1,5 @@
 import type { CSSProperties } from 'react';
+import type { OthersTexts, ShotCardTexts } from '@/i18n/siteI18n';
 import type { EvidenceShot, ProjectHighlight, WorkExperience } from '@/types/portfolio';
 import { ShotCard } from './ShotCard';
 import { eyebrow, miniTop, sectionHead, sectionShell, sectionSummary, sectionTitle } from './uiClasses';
@@ -8,21 +9,21 @@ type OthersSectionProps = {
   workExperience: readonly WorkExperience[];
   projectHighlights: readonly ProjectHighlight[];
   journalShots: readonly EvidenceShot[];
+  texts: OthersTexts;
+  shotCardTexts: ShotCardTexts;
   onOpen: (image: string, title: string) => void;
 };
 
-export function OthersSection({ style, workExperience, projectHighlights, journalShots, onOpen }: OthersSectionProps) {
+export function OthersSection({ style, workExperience, projectHighlights, journalShots, texts, shotCardTexts, onOpen }: OthersSectionProps) {
   return (
     <section id='others' className={sectionShell} style={style}>
       <div className={sectionHead}>
-        <p className={eyebrow}>SECTION 03 · OTHERS</p>
-        <h2 className={sectionTitle}>Additional Projects and Engineering Journal</h2>
+        <p className={eyebrow}>{texts.eyebrow}</p>
+        <h2 className={sectionTitle}>{texts.title}</h2>
       </div>
-      <p className={sectionSummary}>
-        This section covers commercial delivery, open-source work, and engineering artifacts from active projects.
-      </p>
+      <p className={sectionSummary}>{texts.summary}</p>
       <div className='mt-4 border-t-2 border-[color:var(--line)] pt-[0.9rem]'>
-        <p className={miniTop}>Commercial Experience Timeline</p>
+        <p className={miniTop}>{texts.timelineTitle}</p>
         <div className='mt-4 grid grid-cols-2 gap-[0.75rem] max-[860px]:grid-cols-1'>
           {workExperience.map((item) => (
             <article
@@ -56,20 +57,23 @@ export function OthersSection({ style, workExperience, projectHighlights, journa
               target='_blank'
               rel='noreferrer'
             >
-              {project.linkLabel ?? 'Open repository'}
+              {project.linkLabel ?? texts.defaultRepoLinkLabel}
             </a>
           </article>
         ))}
       </div>
       <div className='mt-4 border-t-2 border-[color:var(--line)] pt-[0.9rem]'>
-        <p className={miniTop}>Engineering Journal (Telegram)</p>
+        <p className={miniTop}>{texts.journalTitle}</p>
         <div className='mt-[0.75rem] grid grid-cols-2 gap-[0.75rem] max-[860px]:grid-cols-1'>
           {journalShots.map((shot) => (
             <ShotCard
               key={shot.title}
               shot={shot}
               imageSizes='(max-width: 860px) 100vw, 50vw'
-              linkLabel='Open Telegram post'
+              linkLabel={texts.shotLinkLabel}
+              viewLabel={shotCardTexts.viewLabel}
+              openImagePrefix={shotCardTexts.openImagePrefix}
+              defaultSourceLabel={shotCardTexts.openSourceLabel}
               onOpen={onOpen}
             />
           ))}

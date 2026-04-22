@@ -1,5 +1,8 @@
 import type { Metadata } from 'next';
+import { cookies } from 'next/headers';
+import { headers } from 'next/headers';
 import { JetBrains_Mono, Manrope, Unbounded } from 'next/font/google';
+import { LANG_COOKIE_NAME, resolveLocale, siteDictionary } from '@/i18n/siteI18n';
 import './globals.css';
 
 const manrope = Manrope({
@@ -17,32 +20,46 @@ const jetbrainsMono = JetBrains_Mono({
   subsets: ['latin', 'cyrillic'],
 });
 
-export const metadata: Metadata = {
-  title: 'samanwirst — Product Portfolio',
-  description:
-    'Portfolio of samanwirst with verified engineering evidence: architecture, runtime captures, GitHub and Telegram artifacts.',
-  icons: {
-    icon: [
-      { url: '/meta/topography-icon.svg', type: 'image/svg+xml' },
-      { url: '/meta/topography-icon-32.png', sizes: '32x32', type: 'image/png' },
-      {
-        url: '/meta/topography-icon-512.png',
-        sizes: '512x512',
-        type: 'image/png',
-      },
-    ],
-    shortcut: '/meta/topography-icon-32.png',
-    apple: [{ url: '/meta/topography-icon-180.png', sizes: '180x180' }],
-  },
+const metadataIcons: Metadata['icons'] = {
+  icon: [
+    { url: '/meta/topography-icon.svg', type: 'image/svg+xml' },
+    { url: '/meta/topography-icon-32.png', sizes: '32x32', type: 'image/png' },
+    {
+      url: '/meta/topography-icon-512.png',
+      sizes: '512x512',
+      type: 'image/png',
+    },
+  ],
+  shortcut: '/meta/topography-icon-32.png',
+  apple: [{ url: '/meta/topography-icon-180.png', sizes: '180x180' }],
 };
 
-export default function RootLayout({
+export async function generateMetadata(): Promise<Metadata> {
+  const cookieStore = await cookies();
+  const headerStore = await headers();
+  const rawLocale = cookieStore.get(LANG_COOKIE_NAME)?.value;
+  const locale = resolveLocale(rawLocale, headerStore.get('accept-language'));
+  const meta = siteDictionary[locale].meta;
+
+  return {
+    title: meta.title,
+    description: meta.description,
+    icons: metadataIcons,
+  };
+}
+
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const cookieStore = await cookies();
+  const headerStore = await headers();
+  const rawLocale = cookieStore.get(LANG_COOKIE_NAME)?.value;
+  const htmlLang = resolveLocale(rawLocale, headerStore.get('accept-language'));
+
   return (
-    <html lang='en' className={`${manrope.variable} ${unbounded.variable} ${jetbrainsMono.variable} h-full antialiased`}>
+    <html lang={htmlLang} className={`${manrope.variable} ${unbounded.variable} ${jetbrainsMono.variable} h-full antialiased`}>
       <body className='min-h-full flex flex-col'>{children}</body>
     </html>
   );

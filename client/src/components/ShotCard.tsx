@@ -6,10 +6,22 @@ export type ShotCardProps = {
   imageSizes: string;
   linkLabel?: string;
   fallbackTag?: string;
+  viewLabel: string;
+  openImagePrefix: string;
+  defaultSourceLabel: string;
   onOpen: (image: string, title: string) => void;
 };
 
-export function ShotCard({ shot, imageSizes, linkLabel, fallbackTag, onOpen }: ShotCardProps) {
+export function ShotCard({
+  shot,
+  imageSizes,
+  linkLabel,
+  fallbackTag,
+  viewLabel,
+  openImagePrefix,
+  defaultSourceLabel,
+  onOpen,
+}: ShotCardProps) {
   return (
     <article className='group grid overflow-hidden rounded-[var(--radius-md)] border-2 border-[color:var(--line)] bg-[var(--surface-strong)] text-[var(--section-text,var(--text))] transition-[border-color,background-color] duration-[120ms] linear hover:border-[color:var(--line-strong)] hover:bg-[var(--surface)]'>
       <div className='relative w-full aspect-[16/10] border-b-2 border-[color:var(--line)] bg-[var(--surface-soft)]'>
@@ -17,11 +29,11 @@ export function ShotCard({ shot, imageSizes, linkLabel, fallbackTag, onOpen }: S
           type='button'
           className='relative block h-full w-full cursor-zoom-in bg-transparent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-[var(--focus)]'
           onClick={() => onOpen(shot.image, shot.title)}
-          aria-label={`Open image: ${shot.title}`}
+          aria-label={`${openImagePrefix}: ${shot.title}`}
         >
           <Image className='h-full w-full object-cover' src={shot.image} alt={shot.title} fill unoptimized sizes={imageSizes} />
           <span className='pointer-events-none absolute right-[0.62rem] top-[0.62rem] translate-y-[-2px] rounded-none border-2 border-[rgba(197,178,138,0.45)] bg-[rgba(12,17,13,0.78)] px-[0.55rem] py-[0.22rem] font-mono text-[0.72rem] tracking-[0.04em] text-[#e8dcc1] opacity-0 transition-[opacity,transform] duration-[120ms] linear group-hover:translate-y-0 group-hover:opacity-100 max-[700px]:translate-y-0 max-[700px]:opacity-100'>
-            View
+            {viewLabel}
           </span>
         </button>
       </div>
@@ -37,7 +49,7 @@ export function ShotCard({ shot, imageSizes, linkLabel, fallbackTag, onOpen }: S
             target='_blank'
             rel='noreferrer'
           >
-            {linkLabel ?? 'Open source'}
+            {linkLabel ?? defaultSourceLabel}
           </a>
         ) : fallbackTag ? (
           <span className='text-[0.8rem] lowercase text-[#765a3f]'>{fallbackTag}</span>
