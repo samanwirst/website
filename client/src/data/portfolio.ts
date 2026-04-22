@@ -8,29 +8,6 @@ import type {
   WorkExperience,
 } from '@/types/portfolio';
 
-export const coreMetrics = [
-  {
-    value: '27',
-    label: 'Local git repositories on Desktop',
-    note: 'Scan excluding vendor directories',
-  },
-  {
-    value: '576',
-    label: 'Commits across local repositories',
-    note: 'Total across all local git repos',
-  },
-  {
-    value: '12',
-    label: 'Public repositories on GitHub',
-    note: 'GitHub API snapshot',
-  },
-  {
-    value: '2021',
-    label: 'GitHub account start year',
-    note: 'Created on Aug 14, 2021',
-  },
-] satisfies readonly Metric[];
-
 export const focusTracks = [
   {
     index: '01',

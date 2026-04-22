@@ -3,7 +3,6 @@
 import { useCallback, useEffect, useState, type CSSProperties } from 'react';
 import {
   academicAchievements,
-  coreMetrics,
   focusTracks,
   journalShots,
   operonArchitecture,
@@ -25,7 +24,6 @@ import { NavigatorSection } from '@/components/NavigatorSection';
 import { OperonSection } from '@/components/OperonSection';
 import { OthersSection } from '@/components/OthersSection';
 import { ShoksSection } from '@/components/ShoksSection';
-import { StatsSection } from '@/components/StatsSection';
 import { TopBar } from '@/components/TopBar';
 
 const galleryShots = buildGalleryShots({
@@ -149,7 +147,6 @@ export default function Home() {
       <div className='relative z-[1] mx-auto grid max-w-[76rem] gap-[1.1rem]'>
         <TopBar style={reveal(0)} />
         <HeroSection style={reveal(0)} />
-        <StatsSection style={reveal(0)} metrics={coreMetrics} />
         <NavigatorSection style={reveal(0)} tracks={focusTracks} />
         <ShoksSection style={reveal(0)} facts={shoksFacts} metrics={shoksMetrics} shots={shoksShots} onOpen={openLightbox} />
         <OperonSection
