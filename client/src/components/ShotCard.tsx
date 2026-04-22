@@ -26,7 +26,7 @@ export function ShotCard({ shot, imageSizes, linkLabel, fallbackTag, onOpen }: S
         </button>
       </div>
       <div className='grid gap-[0.5rem] p-[0.82rem] max-[480px]:p-[0.72rem]'>
-        <h3 className='m-0 text-[1rem] leading-[1.28] transition-colors duration-[120ms] linear group-hover:text-[#3b2b1b] max-[480px]:text-[0.94rem]'>
+        <h3 className='m-0 text-[1rem] font-semibold leading-[1.28] tracking-[-0.01em] transition-colors duration-[120ms] linear group-hover:text-[#3b2b1b] max-[480px]:text-[0.94rem]'>
           {shot.title}
         </h3>
         <p className='m-0 text-[0.9rem] leading-[1.45] text-[var(--section-muted,var(--muted))]'>{shot.caption}</p>

@@ -11,14 +11,14 @@ export function TopBar({ style }: TopBarProps) {
       style={style}
     >
       <a
-        className='inline-flex items-center gap-[0.42rem] text-[0.78rem] tracking-[0.14em] hover:cursor-pointer [font-family:var(--font-display),Trebuchet_MS,sans-serif]'
+        className='inline-flex items-center gap-[0.42rem] text-[0.78rem] font-semibold tracking-[0.14em] hover:cursor-pointer [font-family:var(--font-display),Trebuchet_MS,sans-serif]'
         href='#'
       >
         <span className='h-[0.58rem] w-[0.58rem] rounded-none bg-[var(--brand)]' />
         samanwirst
       </a>
       <nav
-        className='inline-flex gap-[0.9rem] text-[0.9rem] text-[var(--muted)] max-[700px]:grid max-[700px]:w-full max-[700px]:grid-cols-2 max-[700px]:gap-[0.45rem] max-[700px]:text-[0.82rem]'
+        className='inline-flex gap-[0.9rem] text-[0.9rem] font-medium text-[var(--muted)] max-[700px]:grid max-[700px]:w-full max-[700px]:grid-cols-2 max-[700px]:gap-[0.45rem] max-[700px]:text-[0.82rem]'
         aria-label='Main navigation'
       >
         <a

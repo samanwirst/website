@@ -62,7 +62,7 @@ export function AcademicSection({ style, achievements, onOpen }: AcademicSection
               </div>
               <div className='grid gap-[0.52rem] p-[0.9rem] max-[480px]:p-[0.78rem]'>
                 <p className={miniTop}>{achievement.date}</p>
-                <h3 className='m-0 text-[1rem] leading-[1.3]'>{achievement.title}</h3>
+                <h3 className='m-0 text-[1rem] font-semibold leading-[1.3] tracking-[-0.01em]'>{achievement.title}</h3>
                 <p className='m-0 text-[0.9rem] leading-[1.46] text-[var(--section-muted,var(--muted))]'>
                   {achievement.detail}
                 </p>

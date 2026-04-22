@@ -30,10 +30,10 @@ export function OthersSection({ style, workExperience, projectHighlights, journa
               className='group grid gap-[0.55rem] rounded-[var(--radius-md)] border-2 border-[color:var(--line)] bg-[var(--surface-strong)] p-[0.9rem] transition-[border-color,background-color] duration-[120ms] linear hover:border-[color:var(--line-strong)] hover:bg-[var(--surface)]'
             >
               <p className={miniTop}>{item.period}</p>
-              <h3 className='m-0 text-[1rem] leading-[1.25] transition-colors duration-[120ms] linear group-hover:text-[#3a2a1b]'>
+              <h3 className='m-0 text-[1rem] font-semibold leading-[1.25] tracking-[-0.01em] transition-colors duration-[120ms] linear group-hover:text-[#3a2a1b]'>
                 {item.role}
               </h3>
-              <p className='text-[0.82rem] uppercase tracking-[0.02em] text-[#775c41]'>{item.company}</p>
+              <p className='text-[0.82rem] font-medium uppercase tracking-[0.02em] text-[#775c41]'>{item.company}</p>
               <p className='m-0 text-[0.9rem] leading-[1.45] text-[var(--section-muted,var(--muted))]'>{item.summary}</p>
             </article>
           ))}
@@ -46,7 +46,7 @@ export function OthersSection({ style, workExperience, projectHighlights, journa
             className='group grid gap-[0.55rem] rounded-[var(--radius-md)] border-2 border-[color:var(--line)] bg-[var(--surface-strong)] p-[0.9rem] transition-[border-color,background-color] duration-[120ms] linear hover:border-[color:var(--line-strong)] hover:bg-[var(--surface)]'
           >
             <p className={miniTop}>{project.meta}</p>
-            <h3 className='m-0 text-[1rem] leading-[1.25] transition-colors duration-[120ms] linear group-hover:text-[#3a2a1b]'>
+            <h3 className='m-0 text-[1rem] font-semibold leading-[1.25] tracking-[-0.01em] transition-colors duration-[120ms] linear group-hover:text-[#3a2a1b]'>
               {project.name}
             </h3>
             <p className='m-0 text-[0.9rem] leading-[1.45] text-[var(--section-muted,var(--muted))]'>{project.summary}</p>

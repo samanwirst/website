@@ -13,7 +13,7 @@ type LightboxProps = {
 export function Lightbox({ activeShot, activeShotIndex, galleryCount, onClose, onPrevious, onNext }: LightboxProps) {
   return (
     <div
-      className='fixed inset-0 z-[120] grid place-items-center bg-[rgba(12,8,7,0.9)] p-[clamp(0.75rem,1.8vw,1.35rem)] animate-[lightbox-fade_120ms_linear] hover:cursor-pointer'
+      className='fixed inset-0 z-[120] grid place-items-center bg-[rgba(12,8,7,0.9)] p-[clamp(0.75rem,1.8vw,1.35rem)] animate-[lightbox-fade_120ms_linear]'
       role='dialog'
       aria-modal='true'
       aria-labelledby='lightbox-title'
@@ -28,7 +28,7 @@ export function Lightbox({ activeShot, activeShotIndex, galleryCount, onClose, o
             <p className='m-0 font-mono text-[0.74rem] tracking-[0.06em] text-[#b9ab8d]'>
               {String(activeShotIndex + 1).padStart(2, '0')} / {String(galleryCount).padStart(2, '0')}
             </p>
-            <h3 id='lightbox-title' className='m-0 text-[clamp(1.2rem,2.2vw,1.7rem)] leading-[1.1]'>
+            <h3 id='lightbox-title' className='m-0 text-[clamp(1.2rem,2.2vw,1.7rem)] font-semibold leading-[1.1]'>
               {activeShot.title}
             </h3>
             <p className='m-0 text-[0.88rem] leading-[1.42] text-[var(--muted)]'>{activeShot.caption}</p>

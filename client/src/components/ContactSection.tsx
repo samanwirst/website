@@ -14,7 +14,7 @@ export function ContactSection({ style }: ContactSectionProps) {
     >
       <div>
         <p className={eyebrow}>WORKING FORMAT</p>
-        <h2 className='m-[0.45rem_0_0] max-w-[18ch] text-[clamp(1.4rem,2.8vw,2.4rem)] leading-[1.09] tracking-[-0.03em] [font-family:var(--font-display),Trebuchet_MS,sans-serif]'>
+        <h2 className='m-[0.45rem_0_0] max-w-[18ch] text-[clamp(1.4rem,2.8vw,2.4rem)] font-semibold leading-[1.09] tracking-[-0.03em] [font-family:var(--font-display),Trebuchet_MS,sans-serif]'>
           Professional profile:{' '}
           <span className='text-[var(--brand)]'>ownership, delivery speed, and architectural precision.</span>
         </h2>

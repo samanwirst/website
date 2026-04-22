@@ -27,7 +27,7 @@ export function NavigatorSection({ style, tracks }: NavigatorSectionProps) {
                 {track.tag}
               </span>
             </div>
-            <h3 className='m-0 text-[1rem] leading-[1.28] transition-colors duration-[120ms] linear group-hover:text-[#392919]'>
+            <h3 className='m-0 text-[1rem] font-semibold leading-[1.28] tracking-[-0.01em] transition-colors duration-[120ms] linear group-hover:text-[#392919]'>
               {track.title}
             </h3>
             <p className='m-0 text-[0.9rem] leading-[1.45] text-[var(--section-muted,var(--muted))] transition-colors duration-[120ms] linear group-hover:text-[#765c43]'>

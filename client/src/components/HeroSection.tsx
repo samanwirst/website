@@ -13,7 +13,7 @@ export function HeroSection({ style }: HeroSectionProps) {
     >
       <article className='rounded-[var(--radius-xl)] border-2 border-[color:var(--line)] bg-[var(--surface)] p-[clamp(1.4rem,2.8vw,2.5rem)] max-[700px]:rounded-[var(--radius-lg)] max-[700px]:p-[1rem] max-[480px]:p-[0.85rem]'>
         <p className={eyebrow}>PRODUCT PORTFOLIO · INTERACTIVE CASEBOOK</p>
-        <h1 className='m-[0.6rem_0_0] max-w-[18ch] text-[clamp(1.9rem,3.8vw,3.5rem)] leading-[1.07] tracking-[-0.03em] [font-family:var(--font-display),Trebuchet_MS,sans-serif] max-[520px]:text-[clamp(1.55rem,9vw,2.1rem)]'>
+        <h1 className='m-[0.6rem_0_0] max-w-[18ch] text-[clamp(1.9rem,3.8vw,3.5rem)] font-semibold leading-[1.07] tracking-[-0.03em] [font-family:var(--font-display),Trebuchet_MS,sans-serif] max-[520px]:text-[clamp(1.55rem,9vw,2.1rem)]'>
           I build high-impact products that ship fast, run on robust architecture, and prove their value through measurable
           outcomes.
         </h1>
