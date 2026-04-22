@@ -1,4 +1,5 @@
 import type { CSSProperties } from 'react';
+import { FaGithub, FaLinkedinIn, FaTelegramPlane } from 'react-icons/fa';
 import { btnPrimary, btnSecondary, eyebrow, sectionShell } from './uiClasses';
 
 type ContactSectionProps = {
@@ -24,19 +25,22 @@ export function ContactSection({ style }: ContactSectionProps) {
         </p>
       </div>
       <div className='flex min-w-[min(100%,16rem)] flex-col gap-[0.6rem] max-[1000px]:w-full max-[1000px]:min-w-0'>
-        <a className={btnPrimary} href='https://github.com/samanwirst' target='_blank' rel='noreferrer'>
-          GitHub
+        <a className={`${btnPrimary} gap-[0.5rem]`} href='https://github.com/samanwirst' target='_blank' rel='noreferrer'>
+          <FaGithub className='h-[0.98rem] w-[0.98rem] shrink-0' aria-hidden='true' />
+          <span>GitHub</span>
         </a>
         <a
-          className={btnSecondary}
+          className={`${btnSecondary} gap-[0.5rem]`}
           href='https://www.linkedin.com/in/samandar-mukhammadiev-0279b8274/'
           target='_blank'
           rel='noreferrer'
         >
-          LinkedIn
+          <FaLinkedinIn className='h-[0.98rem] w-[0.98rem] shrink-0' aria-hidden='true' />
+          <span>LinkedIn</span>
         </a>
-        <a className={btnSecondary} href='https://t.me/samanwirst' target='_blank' rel='noreferrer'>
-          Telegram
+        <a className={`${btnSecondary} gap-[0.5rem]`} href='https://t.me/samanwirst' target='_blank' rel='noreferrer'>
+          <FaTelegramPlane className='h-[0.98rem] w-[0.98rem] shrink-0' aria-hidden='true' />
+          <span>Telegram</span>
         </a>
       </div>
     </section>

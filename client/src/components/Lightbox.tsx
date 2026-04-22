@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import type { GalleryShot } from '@/types/portfolio';
 
 type LightboxProps = {
@@ -49,7 +50,7 @@ export function Lightbox({ activeShot, activeShotIndex, galleryCount, onClose, o
             onClick={onPrevious}
             aria-label='Show previous image'
           >
-            ←
+            <ChevronLeft className='h-[1.2rem] w-[1.2rem]' aria-hidden='true' />
           </button>
           <div className='relative h-[min(62vh,35rem)] w-full overflow-hidden rounded-[var(--radius-md)] bg-[rgba(16,11,8,0.86)] max-[700px]:h-[min(46dvh,22rem)]'>
             <Image
@@ -68,7 +69,7 @@ export function Lightbox({ activeShot, activeShotIndex, galleryCount, onClose, o
             onClick={onNext}
             aria-label='Show next image'
           >
-            →
+            <ChevronRight className='h-[1.2rem] w-[1.2rem]' aria-hidden='true' />
           </button>
         </div>
         <p className='m-0 font-mono text-[0.78rem] tracking-[0.03em] text-[#b5a88b]'>Esc to close · Use ←/→ to navigate</p>
