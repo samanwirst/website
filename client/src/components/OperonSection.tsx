@@ -16,7 +16,16 @@ type OperonSectionProps = {
   onOpen: (image: string, title: string) => void;
 };
 
-export function OperonSection({ style, architecture, runtimeChecks, metrics, shots, texts, shotCardTexts, onOpen }: OperonSectionProps) {
+export function OperonSection({
+  style,
+  architecture,
+  runtimeChecks,
+  metrics,
+  shots,
+  texts,
+  shotCardTexts,
+  onOpen,
+}: OperonSectionProps) {
   return (
     <section id='operon' className={sectionShell} style={style}>
       <div className={sectionHead}>

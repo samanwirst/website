@@ -43,12 +43,15 @@ export default function HomeClient({ initialLocale }: HomeClientProps) {
   const activeShot = activeShotIndex !== null ? galleryShots[activeShotIndex] : null;
   const galleryCount = galleryShots.length;
 
-  const openLightbox = useCallback((image: string, title: string) => {
-    const shotIndex = galleryIndexByKey.get(galleryKey(image, title));
-    if (shotIndex !== undefined) {
-      setActiveShotIndex(shotIndex);
-    }
-  }, [galleryIndexByKey]);
+  const openLightbox = useCallback(
+    (image: string, title: string) => {
+      const shotIndex = galleryIndexByKey.get(galleryKey(image, title));
+      if (shotIndex !== undefined) {
+        setActiveShotIndex(shotIndex);
+      }
+    },
+    [galleryIndexByKey]
+  );
 
   const onLocaleChange = useCallback((nextLocale: Locale) => {
     setLocale(nextLocale);
@@ -184,7 +187,12 @@ export default function HomeClient({ initialLocale }: HomeClientProps) {
           shotCardTexts={texts.shotCard}
           onOpen={openLightbox}
         />
-        <AcademicSection style={reveal(0)} achievements={content.academicAchievements} texts={texts.academic} onOpen={openLightbox} />
+        <AcademicSection
+          style={reveal(0)}
+          achievements={content.academicAchievements}
+          texts={texts.academic}
+          onOpen={openLightbox}
+        />
         <ContactSection style={reveal(0)} texts={texts.contact} />
       </div>
 

@@ -18,7 +18,9 @@ export function HeroSection({ style, texts }: HeroSectionProps) {
         <h1 className='m-[0.6rem_0_0] max-w-[18ch] text-[clamp(1.9rem,3.8vw,3.5rem)] font-semibold leading-[1.07] tracking-[-0.03em] [font-family:var(--font-display),Trebuchet_MS,sans-serif] max-[520px]:text-[clamp(1.55rem,9vw,2.1rem)]'>
           {texts.title}
         </h1>
-        <p className='m-[1rem_0_0] max-w-[54ch] text-[0.98rem] leading-[1.58] text-[var(--section-muted,var(--muted))]'>{texts.summary}</p>
+        <p className='m-[1rem_0_0] max-w-[54ch] text-[0.98rem] leading-[1.58] text-[var(--section-muted,var(--muted))]'>
+          {texts.summary}
+        </p>
         <div className='mt-[1.45rem] flex flex-wrap gap-[0.7rem] max-[520px]:grid max-[520px]:grid-cols-1'>
           <a className={btnPrimary} href='#shoks'>
             {texts.caseButton}
@@ -46,7 +48,9 @@ export function HeroSection({ style, texts }: HeroSectionProps) {
         </p>
         <ul className='m-0 grid list-none gap-[0.55rem] p-0'>
           <li className='flex items-center justify-between gap-[0.8rem] rounded-[var(--radius-md)] border-2 border-[color:var(--line)] bg-[var(--surface-strong)] px-[0.7rem] py-[0.6rem] transition-[border-color,background-color] duration-[120ms] linear hover:border-[color:var(--line-strong)] hover:bg-[var(--surface-soft)] max-[520px]:flex-col max-[520px]:items-start'>
-            <span className='text-[0.74rem] uppercase tracking-[0.08em] text-[var(--section-muted,var(--muted))]'>{texts.roleLabel}</span>
+            <span className='text-[0.74rem] uppercase tracking-[0.08em] text-[var(--section-muted,var(--muted))]'>
+              {texts.roleLabel}
+            </span>
             <span className='text-right text-[0.84rem] font-semibold max-[520px]:text-left'>{texts.roleValue}</span>
           </li>
           <li className='flex items-center justify-between gap-[0.8rem] rounded-[var(--radius-md)] border-2 border-[color:var(--line)] bg-[var(--surface-strong)] px-[0.7rem] py-[0.6rem] transition-[border-color,background-color] duration-[120ms] linear hover:border-[color:var(--line-strong)] hover:bg-[var(--surface-soft)] max-[520px]:flex-col max-[520px]:items-start'>
@@ -62,7 +66,9 @@ export function HeroSection({ style, texts }: HeroSectionProps) {
             <span className='text-right text-[0.84rem] font-semibold max-[520px]:text-left'>{texts.architectureCaseValue}</span>
           </li>
         </ul>
-        <p className='m-0 border-t-2 border-[color:var(--line)] pt-[0.85rem] text-[0.9rem] leading-[1.5] text-[var(--section-muted,var(--muted))]'>{texts.workingFormat}</p>
+        <p className='m-0 border-t-2 border-[color:var(--line)] pt-[0.85rem] text-[0.9rem] leading-[1.5] text-[var(--section-muted,var(--muted))]'>
+          {texts.workingFormat}
+        </p>
       </aside>
     </section>
   );

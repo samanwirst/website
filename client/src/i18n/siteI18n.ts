@@ -204,7 +204,8 @@ export const siteDictionary: Record<Locale, SiteTexts> = {
       eyebrow: 'PRODUCT PORTFOLIO · INTERACTIVE CASEBOOK',
       title:
         'I build high-impact products that ship fast, run on robust architecture, and prove their value through measurable outcomes.',
-      summary: 'Primary case: ShoksSAT (CTO), followed by an OperonCRM architecture deep dive and additional engineering projects.',
+      summary:
+        'Primary case: ShoksSAT (CTO), followed by an OperonCRM architecture deep dive and additional engineering projects.',
       caseButton: 'ShoksSAT Case',
       githubLabel: 'GitHub',
       linkedinLabel: 'LinkedIn',
@@ -228,7 +229,8 @@ export const siteDictionary: Record<Locale, SiteTexts> = {
       eyebrow: 'SECTION 01 · SHOKSSAT',
       title: 'ShoksSAT — Primary Product Case (CTO)',
       roleScopeTitle: 'Role + Scope',
-      roleScopeSummary: 'Production-first focus: SAT prep platform architecture, fast feature delivery, and growth-loop support.',
+      roleScopeSummary:
+        'Production-first focus: SAT prep platform architecture, fast feature delivery, and growth-loop support.',
       scoreboardTitle: 'ShoksSAT Scoreboard',
       shotLinkLabel: 'Open Telegram',
     },
@@ -325,7 +327,8 @@ export const siteDictionary: Record<Locale, SiteTexts> = {
       eyebrow: 'РАЗДЕЛ 01 · SHOKSSAT',
       title: 'ShoksSAT — ключевой продуктовый кейс (CTO)',
       roleScopeTitle: 'Роль и зона ответственности',
-      roleScopeSummary: 'Фокус на продакшене: архитектура платформы подготовки к SAT, быстрая поставка фич и поддержка growth-цикла.',
+      roleScopeSummary:
+        'Фокус на продакшене: архитектура платформы подготовки к SAT, быстрая поставка фич и поддержка growth-цикла.',
       scoreboardTitle: 'Метрики ShoksSAT',
       shotLinkLabel: 'Открыть Telegram',
     },
@@ -359,7 +362,8 @@ export const siteDictionary: Record<Locale, SiteTexts> = {
       eyebrow: 'РАБОЧИЙ ФОРМАТ',
       titlePrefix: 'Профессиональный профиль:',
       titleAccent: 'ответственность, скорость поставки и архитектурная точность.',
-      summary: 'Структура страницы следует приоритету исполнения: ShoksSAT -> OperonCRM -> дополнительные кейсы -> академические достижения.',
+      summary:
+        'Структура страницы следует приоритету исполнения: ShoksSAT -> OperonCRM -> дополнительные кейсы -> академические достижения.',
       githubLabel: 'GitHub',
       linkedinLabel: 'LinkedIn',
       telegramLabel: 'Telegram',

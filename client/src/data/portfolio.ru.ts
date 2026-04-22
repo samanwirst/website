@@ -177,7 +177,8 @@ export const projectHighlightsRu = [
   },
   {
     name: 'Synphora',
-    summary: 'Open-source Telegram-приложение синхронизации музыки: onboarding в боте, PIN для room-auth и realtime sync через Socket.IO.',
+    summary:
+      'Open-source Telegram-приложение синхронизации музыки: onboarding в боте, PIN для room-auth и realtime sync через Socket.IO.',
     meta: '12 коммитов · обновлено 2026-04-19',
     link: 'https://github.com/samanwirst/synphora',
   },

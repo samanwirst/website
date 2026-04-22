@@ -14,7 +14,15 @@ type OthersSectionProps = {
   onOpen: (image: string, title: string) => void;
 };
 
-export function OthersSection({ style, workExperience, projectHighlights, journalShots, texts, shotCardTexts, onOpen }: OthersSectionProps) {
+export function OthersSection({
+  style,
+  workExperience,
+  projectHighlights,
+  journalShots,
+  texts,
+  shotCardTexts,
+  onOpen,
+}: OthersSectionProps) {
   return (
     <section id='others' className={sectionShell} style={style}>
       <div className={sectionHead}>
