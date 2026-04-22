@@ -1,8 +1,9 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { cookies } from 'next/headers';
 import { headers } from 'next/headers';
 import { JetBrains_Mono, Manrope, Unbounded } from 'next/font/google';
 import { LANG_COOKIE_NAME, resolveLocale, siteDictionary } from '@/i18n/siteI18n';
+import { getSiteUrl } from '@/lib/seo';
 import './globals.css';
 
 const manrope = Manrope({
@@ -22,16 +23,18 @@ const jetbrainsMono = JetBrains_Mono({
 
 const metadataIcons: Metadata['icons'] = {
   icon: [
-    { url: '/meta/topography-icon.svg', type: 'image/svg+xml' },
+    { url: '/favicon.ico', sizes: 'any' },
     { url: '/meta/topography-icon-32.png', sizes: '32x32', type: 'image/png' },
-    {
-      url: '/meta/topography-icon-512.png',
-      sizes: '512x512',
-      type: 'image/png',
-    },
+    { url: '/meta/topography-icon-512.png', sizes: '512x512', type: 'image/png' },
   ],
-  shortcut: '/meta/topography-icon-32.png',
-  apple: [{ url: '/meta/topography-icon-180.png', sizes: '180x180' }],
+  shortcut: '/favicon.ico',
+  apple: [{ url: '/meta/topography-icon-180.png', sizes: '180x180', type: 'image/png' }],
+};
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  themeColor: '#17120d',
 };
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -40,10 +43,67 @@ export async function generateMetadata(): Promise<Metadata> {
   const rawLocale = cookieStore.get(LANG_COOKIE_NAME)?.value;
   const locale = resolveLocale(rawLocale, headerStore.get('accept-language'));
   const meta = siteDictionary[locale].meta;
+  const siteUrl = getSiteUrl();
+  const metadataBase = new URL(siteUrl);
+  const ogImagePath = '/media/shoks/shoks-platform-first.png';
 
   return {
+    metadataBase,
     title: meta.title,
     description: meta.description,
+    applicationName: 'samanwirst portfolio',
+    category: 'technology',
+    referrer: 'origin-when-cross-origin',
+    alternates: {
+      canonical: '/',
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+        'max-video-preview': -1,
+      },
+    },
+    keywords: [
+      'samanwirst',
+      'portfolio',
+      'CTO',
+      'fullstack developer',
+      'Next.js',
+      'TypeScript',
+      'OperonCRM',
+      'ShoksSAT',
+    ],
+    authors: [{ name: 'Mukhammadiev Samandar Shavkatovich' }],
+    creator: 'Mukhammadiev Samandar Shavkatovich',
+    publisher: 'Mukhammadiev Samandar Shavkatovich',
+    openGraph: {
+      type: 'website',
+      locale: locale === 'ru' ? 'ru_RU' : 'en_US',
+      url: '/',
+      siteName: 'samanwirst',
+      title: meta.title,
+      description: meta.description,
+      images: [
+        {
+          url: ogImagePath,
+          width: 1200,
+          height: 630,
+          alt: meta.title,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: meta.title,
+      description: meta.description,
+      images: [ogImagePath],
+    },
+    manifest: '/site.webmanifest',
     icons: metadataIcons,
   };
 }
