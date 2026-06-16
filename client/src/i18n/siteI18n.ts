@@ -86,12 +86,10 @@ export type HeroTexts = {
   linkedinLabel: string;
   telegramLabel: string;
   snapshotTitle: string;
-  roleLabel: string;
-  roleValue: string;
-  primaryProductLabel: string;
-  primaryProductValue: string;
-  architectureCaseLabel: string;
-  architectureCaseValue: string;
+  availabilityLabel: string;
+  availabilityValue: string;
+  hourlyRateLabel: string;
+  hourlyRateValue: string;
   workingFormat: string;
 };
 
@@ -211,12 +209,10 @@ export const siteDictionary: Record<Locale, SiteTexts> = {
       linkedinLabel: 'LinkedIn',
       telegramLabel: 'Telegram',
       snapshotTitle: 'Portfolio Snapshot · April 20, 2026',
-      roleLabel: 'Role',
-      roleValue: 'CTO @ ShoksSAT',
-      primaryProductLabel: 'Primary Product',
-      primaryProductValue: 'ShoksSAT',
-      architectureCaseLabel: 'Architecture Case',
-      architectureCaseValue: 'OperonCRM',
+      availabilityLabel: 'Availability',
+      availabilityValue: 'Open to contract work',
+      hourlyRateLabel: 'Hourly rate',
+      hourlyRateValue: '$8 / hour',
       workingFormat:
         'Below is a working-format portfolio only: key sections, factual metrics, interactive technical blocks, and supporting evidence.',
     },
@@ -309,12 +305,10 @@ export const siteDictionary: Record<Locale, SiteTexts> = {
       linkedinLabel: 'LinkedIn',
       telegramLabel: 'Telegram',
       snapshotTitle: 'Срез портфолио · 20 апреля 2026',
-      roleLabel: 'Роль',
-      roleValue: 'CTO @ ShoksSAT',
-      primaryProductLabel: 'Основной продукт',
-      primaryProductValue: 'ShoksSAT',
-      architectureCaseLabel: 'Архитектурный кейс',
-      architectureCaseValue: 'OperonCRM',
+      availabilityLabel: 'Доступность',
+      availabilityValue: 'Открыт к контрактной работе',
+      hourlyRateLabel: 'Почасовая ставка',
+      hourlyRateValue: '$8 / час',
       workingFormat:
         'Ниже рабочий формат портфолио: ключевые разделы, фактические метрики, интерактивные технические блоки и подтверждающие материалы.',
     },

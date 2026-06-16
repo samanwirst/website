@@ -1,6 +1,7 @@
 import type { CSSProperties } from 'react';
 import type { HeroTexts } from '@/i18n/siteI18n';
 import { btnPrimary, btnSecondary, eyebrow } from './uiClasses';
+import Image from 'next/image';
 
 type HeroSectionProps = {
   style: CSSProperties;
@@ -43,27 +44,31 @@ export function HeroSection({ style, texts }: HeroSectionProps) {
       </article>
 
       <aside className='flex flex-col gap-[0.85rem] rounded-[var(--radius-xl)] border-2 border-[color:var(--line)] bg-[var(--surface)] p-[1.2rem] max-[700px]:rounded-[var(--radius-lg)] max-[700px]:p-[1rem] max-[480px]:p-[0.85rem]'>
+        <div className='relative aspect-[4/3] overflow-hidden rounded-[var(--radius-lg)] border-2 border-[color:var(--line)] bg-[#23324f]'>
+          <Image
+            src='/images/personal_pic.png'
+            alt='Personal photo'
+            fill
+            priority
+            className='object-cover object-[center_12%]'
+            sizes='(max-width: 700px) 100vw, 28rem'
+          />
+        </div>
         <p className='m-0 font-mono text-[0.72rem] uppercase tracking-[0.12em] text-[var(--section-muted,var(--muted))]'>
           {texts.snapshotTitle}
         </p>
         <ul className='m-0 grid list-none gap-[0.55rem] p-0'>
           <li className='flex items-center justify-between gap-[0.8rem] rounded-[var(--radius-md)] border-2 border-[color:var(--line)] bg-[var(--surface-strong)] px-[0.7rem] py-[0.6rem] transition-[border-color,background-color] duration-[120ms] linear hover:border-[color:var(--line-strong)] hover:bg-[var(--surface-soft)] max-[520px]:flex-col max-[520px]:items-start'>
             <span className='text-[0.74rem] uppercase tracking-[0.08em] text-[var(--section-muted,var(--muted))]'>
-              {texts.roleLabel}
+              {texts.availabilityLabel}
             </span>
-            <span className='text-right text-[0.84rem] font-semibold max-[520px]:text-left'>{texts.roleValue}</span>
+            <span className='text-right text-[0.84rem] font-semibold max-[520px]:text-left'>{texts.availabilityValue}</span>
           </li>
           <li className='flex items-center justify-between gap-[0.8rem] rounded-[var(--radius-md)] border-2 border-[color:var(--line)] bg-[var(--surface-strong)] px-[0.7rem] py-[0.6rem] transition-[border-color,background-color] duration-[120ms] linear hover:border-[color:var(--line-strong)] hover:bg-[var(--surface-soft)] max-[520px]:flex-col max-[520px]:items-start'>
             <span className='text-[0.74rem] uppercase tracking-[0.08em] text-[var(--section-muted,var(--muted))]'>
-              {texts.primaryProductLabel}
+              {texts.hourlyRateLabel}
             </span>
-            <span className='text-right text-[0.84rem] font-semibold max-[520px]:text-left'>{texts.primaryProductValue}</span>
-          </li>
-          <li className='flex items-center justify-between gap-[0.8rem] rounded-[var(--radius-md)] border-2 border-[color:var(--line)] bg-[var(--surface-strong)] px-[0.7rem] py-[0.6rem] transition-[border-color,background-color] duration-[120ms] linear hover:border-[color:var(--line-strong)] hover:bg-[var(--surface-soft)] max-[520px]:flex-col max-[520px]:items-start'>
-            <span className='text-[0.74rem] uppercase tracking-[0.08em] text-[var(--section-muted,var(--muted))]'>
-              {texts.architectureCaseLabel}
-            </span>
-            <span className='text-right text-[0.84rem] font-semibold max-[520px]:text-left'>{texts.architectureCaseValue}</span>
+            <span className='text-right text-[0.84rem] font-semibold max-[520px]:text-left'>{texts.hourlyRateValue}</span>
           </li>
         </ul>
         <p className='m-0 border-t-2 border-[color:var(--line)] pt-[0.85rem] text-[0.9rem] leading-[1.5] text-[var(--section-muted,var(--muted))]'>
