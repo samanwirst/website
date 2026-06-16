@@ -44,15 +44,41 @@ export function HeroSection({ style, texts }: HeroSectionProps) {
       </article>
 
       <aside className='flex flex-col gap-[0.85rem] rounded-[var(--radius-xl)] border-2 border-[color:var(--line)] bg-[var(--surface)] p-[1.2rem] max-[700px]:rounded-[var(--radius-lg)] max-[700px]:p-[1rem] max-[480px]:p-[0.85rem]'>
-        <div className='relative aspect-[4/3] overflow-hidden rounded-[var(--radius-lg)] border-2 border-[color:var(--line)] bg-[#23324f]'>
-          <Image
-            src='/images/personal_pic.png'
-            alt='Personal photo'
-            fill
-            priority
-            className='object-cover object-[center_12%]'
-            sizes='(max-width: 700px) 100vw, 28rem'
-          />
+        <div className='grid gap-[0.85rem] max-[1000px]:grid-cols-[minmax(12rem,0.72fr)_minmax(0,1fr)] max-[640px]:grid-cols-1'>
+          <div className='relative aspect-[4/3] overflow-hidden rounded-[var(--radius-lg)] border-2 border-[color:var(--line)] bg-[#23324f]'>
+            <Image
+              src='/images/personal_pic.png'
+              alt='Personal photo'
+              fill
+              priority
+              className='object-cover object-[center_12%]'
+              sizes='(max-width: 640px) 100vw, (max-width: 1000px) 36vw, 28rem'
+            />
+          </div>
+          <div className='rounded-[var(--radius-md)] border-2 border-[color:var(--line)] bg-[var(--surface-strong)] p-[0.75rem]'>
+            <p className='m-0 font-mono text-[0.72rem] uppercase tracking-[0.1em] text-[var(--section-muted,var(--muted))]'>
+              {texts.skillsTitle}
+            </p>
+            <div className='mt-[0.6rem] grid gap-[0.62rem]'>
+              {texts.skills.map((group) => (
+                <div key={group.label} className='grid gap-[0.35rem]'>
+                  <p className='m-0 text-[0.72rem] font-semibold uppercase tracking-[0.08em] text-[#775c41]'>
+                    {group.label}
+                  </p>
+                  <div className='flex flex-wrap gap-[0.38rem]'>
+                    {group.items.map((item) => (
+                      <span
+                        key={item}
+                        className='rounded-[var(--radius-sm)] border border-[color:var(--line)] bg-[var(--surface-soft)] px-[0.45rem] py-[0.22rem] text-[0.76rem] font-medium leading-[1.2]'
+                      >
+                        {item}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
         <p className='m-0 font-mono text-[0.72rem] uppercase tracking-[0.12em] text-[var(--section-muted,var(--muted))]'>
           {texts.snapshotTitle}

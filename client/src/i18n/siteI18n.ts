@@ -86,6 +86,11 @@ export type HeroTexts = {
   linkedinLabel: string;
   telegramLabel: string;
   snapshotTitle: string;
+  skillsTitle: string;
+  skills: readonly {
+    label: string;
+    items: readonly string[];
+  }[];
   availabilityLabel: string;
   availabilityValue: string;
   hourlyRateLabel: string;
@@ -209,6 +214,21 @@ export const siteDictionary: Record<Locale, SiteTexts> = {
       linkedinLabel: 'LinkedIn',
       telegramLabel: 'Telegram',
       snapshotTitle: 'Portfolio Snapshot · April 20, 2026',
+      skillsTitle: 'Skills',
+      skills: [
+        {
+          label: 'Frontend',
+          items: ['Next.js', 'React', 'TypeScript', 'MUI', 'Chart.js'],
+        },
+        {
+          label: 'Backend + infra',
+          items: ['Django REST', 'PostgreSQL', 'Docker Compose', 'Traefik'],
+        },
+        {
+          label: 'AI agents',
+          items: ['Codex (primary)', 'Claude Code', 'Cursor'],
+        },
+      ],
       availabilityLabel: 'Availability',
       availabilityValue: 'Open to contract work',
       hourlyRateLabel: 'Hourly rate',
@@ -305,6 +325,21 @@ export const siteDictionary: Record<Locale, SiteTexts> = {
       linkedinLabel: 'LinkedIn',
       telegramLabel: 'Telegram',
       snapshotTitle: 'Срез портфолио · 20 апреля 2026',
+      skillsTitle: 'Skills',
+      skills: [
+        {
+          label: 'Frontend',
+          items: ['Next.js', 'React', 'TypeScript', 'MUI', 'Chart.js'],
+        },
+        {
+          label: 'Backend + infra',
+          items: ['Django REST', 'PostgreSQL', 'Docker Compose', 'Traefik'],
+        },
+        {
+          label: 'AI agents',
+          items: ['Codex (основной)', 'Claude Code', 'Cursor'],
+        },
+      ],
       availabilityLabel: 'Доступность',
       availabilityValue: 'Открыт к контрактной работе',
       hourlyRateLabel: 'Почасовая ставка',
